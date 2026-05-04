@@ -19,10 +19,6 @@ post '/api/addpost' do
   returned.to_json
 end
 
-get '/postlist' do
-  erb :postlist
-end
-
 get '/api/postlist' do
   returned = getPost(params)
   puts returned

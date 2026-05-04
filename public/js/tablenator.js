@@ -29,8 +29,12 @@ export function postable (post) {
 
 	const feetrow = document.createElement("tr")
 
+	const manycomments = document.createElement("td")
+	manycomments.textContent = "#: " + post.commentnum
+
+	feetrow.appendChild(manycomments)
+
 	const deletepost = document.createElement("td")
-	deletepost.colSpan = '2'
 
 	const passwordtextin = document.createElement("input")
 	passwordtextin.type = 'password'
