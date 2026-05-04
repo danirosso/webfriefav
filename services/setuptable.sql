@@ -1,1 +1,1 @@
-CREATE TABLE posts (id SERIAL PRIMARY KEY, title TEXT, post TEXT, tag TEXT, hash TEXT);
+CREATE TABLE posts (id SERIAL PRIMARY KEY, title TEXT, post TEXT, tag INT DEFAULT 0 , hash TEXT);

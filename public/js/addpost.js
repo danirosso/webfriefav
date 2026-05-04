@@ -1,14 +1,16 @@
-document.getElementById("send").addEventListener("click", sendpost);
-function sendpost() {
+export function sendpost () {
+	const params = new URLSearchParams(window.location.search)
 	const title = document.getElementById("title").value;
 	const post = document.getElementById("post").value;
-	console.log(post.lenght)
 	const password  = document.getElementById("password").value;
+	const tag = params.get("id")
 	const postobj = {
 		title: title,
 		post: post,
-		password: password
+		password: password,
+		tag: tag
 	};
+	console.log(postobj)
 	fetch("/api/addpost",{
 		method: "POST",
 		headers: {
@@ -19,6 +21,6 @@ function sendpost() {
 		.then(response => response.json())
 		.then(response => { if (response.allGood){
 			console.log("Posted!")
-			window.location.href = "/postlist"
+			window.location.href = "?&id=" + response.id
 		}})
 }
