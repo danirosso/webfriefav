@@ -4,6 +4,7 @@ It was made entirely with vanilla JS, with no libraries; It's hosted using Sinat
 and  psql to manage the database of posts.
 
 It follows these principles:
+
 0. Have fun!
 * fun things are fun!
 
