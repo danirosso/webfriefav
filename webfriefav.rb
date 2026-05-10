@@ -16,11 +16,19 @@ end
 post '/api/addpost' do
   post = JSON.parse(request.body.read)
   returned = addPost(post)
+  puts returned
   returned.to_json
 end
 
 get '/api/postlist' do
   returned = getPost(params)
+  puts returned
+  returned.to_json
+end
+
+delete '/api/deletepost' do
+  passwordobj = JSON.parse(request.body.read)
+  returned = deletePost(passwordobj)
   puts returned
   returned.to_json
 end

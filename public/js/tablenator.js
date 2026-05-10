@@ -1,3 +1,7 @@
+import { 
+	deletate
+}from "./deletator.js"
+
 export function postable (post) {
 	const params = new URLSearchParams(window.location.search)
 	const postable = document.createElement("table")
@@ -37,12 +41,14 @@ export function postable (post) {
 	const deletepost = document.createElement("td")
 
 	const passwordtextin = document.createElement("input")
+	passwordtextin.id = "passwordin" + post.id
 	passwordtextin.type = 'password'
 	deletepost.appendChild(passwordtextin)
 
 	const deletebutton = document.createElement("button")
-	deletebutton.id = 'deletebutton'
+	deletebutton.id = "deletebutton" + post.id
 	deletebutton.textContent = 'Delete'
+	deletebutton.addEventListener("click", function (){deletate(post.id)})
 	deletepost.appendChild(deletebutton)
 
 	feetrow.appendChild(deletepost)

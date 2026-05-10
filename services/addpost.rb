@@ -15,6 +15,6 @@ def addPost(post)
   end
   puts "created id: #{id}"
   return {
-    allGood: true,
-    id: id}
+    "allGood" =>  true,
+    "id" =>  id}
 end
